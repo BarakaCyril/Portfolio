@@ -1,0 +1,425 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Indie+Flower&display=swap');
+
+
+:root {
+  --primary: #d26a1c;
+  --accent: #f7b267;
+  --bg: #f9f7f3;
+  --text: #292929;
+  --muted: #424141;
+  --card-radius: 16px;
+  --shadow: 0 4px 16px rgba(0, 0, 0, 0.112);
+}
+
+h2{
+  margin: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Kalam', cursive;
+  margin: 0;
+  padding: 0;
+  padding-top: 5.5rem;
+}
+
+header {
+    text-align: center;
+    padding: 1em;
+}
+
+.logo{
+  color: var(--text);
+  font-size: 0.8em;
+  size: 20px;
+}
+
+.nav-bar{
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  padding: 0px 30px;
+  background: #ffffff8d;
+  border-radius: 2rem;
+  border: 1.5px solid #72727272;
+  box-shadow: var(--shadow);
+  color: var(--muted);
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  position: fixed;
+  top: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+}
+
+nav ul{
+  display: flex;
+}
+
+nav li {
+  list-style: none;
+  padding: 0.1rem 1.0rem;
+  border-radius: 1.2rem;
+  cursor: pointer;
+  font-weight: 700;
+  
+}
+
+nav li:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+.tagline{
+  font-size: 3rem;
+  display: flex;
+  flex-direction: column;
+  padding: 0px;
+  margin-top: 20px;
+}
+
+.studio{
+  color: var(--primary);
+}
+
+.subtitle {
+  font-family: 'Indie Flower', cursive;
+  margin: 1rem 0 2rem 0;
+  font-size: 1.5rem;
+  color: var(--muted);
+}
+
+.header-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+button.primary, .primary {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  padding: 1.0rem 2rem;
+  border-radius: 2rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: background 0.2s;
+}
+
+button.secondary {
+  background: #fff;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  padding: 0.8rem 2rem;
+  border-radius: 2rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+button.secondary:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+.gallery-section {
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.gallery-section h2 {
+  font-family: 'Kalam', cursive;
+  font-size: 2.5rem;
+  margin-bottom: 0.2rem;
+}
+
+.section-desc {
+  font-family: 'Indie Flower', cursive;
+  font-size: 1.5em;
+  color: var(--muted);
+  margin-bottom: 2rem;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.gallery-card {
+  background: #fff;
+  border-radius: var(--card-radius);
+  box-shadow: var(--shadow);
+  padding: 1.2rem 1rem 1rem 1rem;
+  text-align: left;
+  position: relative;
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.gallery-card.orange { background: linear-gradient(135deg, #d26a1c 60%, #f7b267 100%); color: #fff; }
+.gallery-card.green { background: linear-gradient(135deg, #4caf50 60%, #a8e063 100%); color: #fff; }
+.gallery-card.blue { background: linear-gradient(135deg, #4f8cff 60%, #a18cd1 100%); color: #fff; }
+.gallery-card.pink { background: linear-gradient(135deg, #e96443 60%, #904e95 100%); color: #fff; }
+.gallery-card.yellow { background: linear-gradient(135deg, #f7971e 60%, #ffd200 100%); color: #fff; }
+.gallery-card.purple { background: linear-gradient(135deg, #43cea2 60%, #185a9d 100%); color: #fff; }
+
+.gallery-card h3 {
+  margin: 0 0 0.2rem 0;
+  font-family: 'Kalam', cursive;
+  font-size: 1.2rem;
+}
+
+.gallery-card .tag {
+  background: rgba(255,255,255,0.2);
+  border-radius: 1rem;
+  padding: 0.2rem 0.8rem;
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+}
+
+.gallery-card p {
+  font-size: 0.95rem;
+  margin: 0.2rem 0 0 0;
+  font-family: 'Indie Flower', cursive;
+}
+
+.view-all {
+  font-family: 'Indie Flower', cursive ;
+  margin-top: 20px;
+  background: none;
+  color: var(--muted);
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 2rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.view-all:hover{
+  color: #fff;
+  background-color: var(--muted);
+}
+
+.artist-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2.5rem 3rem;
+  margin: 2rem auto;
+}
+
+.artist-info {
+  flex: 1;
+  min-width: 260px;
+}
+
+.artist-info h2 {
+  font-family: 'Kalam', cursive;
+  font-size: 3.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.artist-info p {
+  font-family: 'Indie Flower', cursive;
+  font-size: 1.3em;
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+
+.philosophy strong{
+  font-size: 1.5em;
+}
+
+.philosophy {
+  background: #f7b26722;
+  border-radius: 1rem;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.artist-skills {
+  flex: 1;
+  min-width: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.artist-skills .icon {
+  width: 250px;
+  height: 250px;
+  background: linear-gradient(135deg, #d26a1c 60%, #f7b267 100%);
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.artist-skills h3 {
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+}
+
+.skill-bar {
+  width: 100%;
+  margin-bottom: 1.7rem;
+  font-size: 1.0rem;
+}
+
+.skill-bar span {
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.skill-bar .bar {
+  height: 10px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+}
+
+.create-section {
+  padding: 2.5rem 1rem 1rem 1rem;
+  text-align: center;
+}
+
+.create-section h2 {
+  font-family: 'Kalam', cursive;
+  font-size: 4rem;
+  margin-bottom: 0.5rem;
+}
+
+.create-section p {
+  font-family: 'Indie Flower', cursive;
+  font-size: 1.5rem;
+  color: var(--muted);
+  margin-bottom: 2rem;
+}
+
+.create-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.collab-form {
+  background: #fff;
+  border-radius: var(--card-radius);
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+  min-width: 280px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.collab-form input, .collab-form select, .collab-form textarea {
+  border: 1px solid #eee;
+  border-radius: 0.7rem;
+  padding: 0.7rem;
+  font-size: 1rem;
+  font-family: inherit;
+  background: #f9f7f3;
+  resize: none;
+}
+
+.collab-form textarea {
+  min-height: 70px;
+}
+
+.collab-form button {
+  margin-top: 0.5rem;
+}
+
+.collab-info {
+  flex: 1;
+  min-width: 260px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  justify-content: flex-start;
+}
+
+.paint-together, .availability {
+  background: #fff;
+  border-radius: var(--card-radius);
+  box-shadow: var(--shadow);
+  padding: 1.2rem 1rem;
+  text-align: left;
+}
+
+.paint-together h4, .availability h4 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+  color: var(--primary);
+}
+
+.paint-together ul {
+  padding-left: 1.2rem;
+  margin: 0;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.availability p {
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+footer {
+  margin-top: 2rem;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.socials {
+  margin-top: 0.5rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.socials a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 700;
+  background: #fff;
+  padding: 0.3rem 1rem;
+  border-radius: 1rem;
+  box-shadow: var(--shadow);
+  transition: background 0.2s, color 0.2s;
+}
+
+.socials a:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+@media (max-width: 900px) {
+  .artist-section, .create-grid {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+
