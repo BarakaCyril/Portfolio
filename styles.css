@@ -30,9 +30,12 @@ header {
 }
 
 .logo{
+  display: flex;
+  gap: 0.5em;
   color: var(--text);
   font-size: 0.8em;
-  size: 20px;
+  align-items: center;
+  text-align: center;
 }
 
 .nav-bar{
@@ -41,11 +44,10 @@ header {
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  padding: 0px 30px;
+  padding: 0px 40px;
   background: #ffffff8d;
   border-radius: 2rem;
-  border: 1.5px solid #72727272;
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow), 0 0 0 2px #69696931;
   color: var(--muted);
   width: fit-content;
   margin-left: auto;
@@ -66,7 +68,7 @@ nav li {
   padding: 0.1rem 1.0rem;
   border-radius: 1.2rem;
   cursor: pointer;
-  font-weight: 700;
+  font-weight: 400;
   
 }
 
@@ -116,8 +118,8 @@ button.primary, .primary {
 
 button.secondary {
   background: #fff;
-  color: var(--primary);
-  border: 2px solid var(--primary);
+  color: var(--muted);
+  border: 2px solid var(--muted);
   padding: 0.8rem 2rem;
   border-radius: 2rem;
   font-size: 1.2rem;
@@ -127,7 +129,7 @@ button.secondary {
 }
 
 button.secondary:hover {
-  background: var(--primary);
+  background: var(--text);
   color: #fff;
 }
 
