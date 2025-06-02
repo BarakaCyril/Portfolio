@@ -70,6 +70,7 @@ h2{
 }
 
 body {
+  box-sizing: border-box;
   background: var(--bg);
   color: var(--text);
   font-family: 'Kalam', cursive;
@@ -236,6 +237,13 @@ button.secondary:hover {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  transition: transform 0.25s cubic-bezier(0.4, 0.2, 0.2, 1), box-shadow 0.25s;
+}
+
+.gallery-card:hover {
+  transform: scale(1.025);
+  box-shadow: 0 8px 32px rgba(210, 106, 28, 0.18), var(--shadow);
+  z-index: 2;
 }
 
 .gallery-card.orange { background: linear-gradient(135deg, #d26a1c 60%, #f7b267 100%); color: #fff; }
@@ -428,11 +436,16 @@ button.secondary:hover {
   justify-content: flex-start;
 }
 
+.paint-together p {
+  font-size: 1.1em;
+  padding: 0.5em 0em;
+}
+
 .paint-together, .availability {
   background: #fff;
   border-radius: var(--card-radius);
   box-shadow: var(--shadow);
-  padding: 1.2rem 1rem;
+  padding: 1.0rem 1rem;
   text-align: left;
 }
 
@@ -484,8 +497,6 @@ footer {
 }
 
 
-
-
 @media (max-width: 900px) {
   .artist-section, .create-grid {
     flex-direction: column;
@@ -497,4 +508,32 @@ footer {
   }
 }
 
+@media (max-width:600px) {
+  .nav-bar{
+    padding: 0.7em 1.7em;
+  }
+  .nav-bar ul{
+    display: none;
+  }
+
+  .hero-content{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .header-buttons{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .artist-section h2{
+    text-align: center;
+  }
+}
 
