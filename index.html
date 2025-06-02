@@ -8,6 +8,14 @@
   
 </head>
 <body>
+
+  <div class="background-circles">
+    <div class="circle circle1"></div>
+    <div class="circle circle2"></div>
+    <div class="circle circle3"></div>
+    <div class="circle circle4"></div>
+  </div>
+
   <header>
     <nav class="nav-bar">
       <div class="logo">
@@ -28,11 +36,11 @@
         <h2 class="studio">STUDIO</h2>
       </div>
         <p class="subtitle">
-          Where imagination meets pixels, and every project tells a story painted with passion <br> and precision.
-      </p>
+          Where imagination meets pixels, and every project tells a story painted with passion <br> and precision. - (AI LOL)
+        </p>
       <div class="header-buttons">
-        <button class="primary"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -1130 960 960" width="24px" fill="#e3e3e3"><path d="M240-120q-45 0-89-22t-71-58q26 0 53-20.5t27-59.5q0-50 35-85t85-35q50 0 85 35t35 85q0 66-47 113t-113 47Zm0-80q33 0 56.5-23.5T320-280q0-17-11.5-28.5T280-320q-17 0-28.5 11.5T240-280q0 23-5.5 42T220-202q5 2 10 2h10Zm230-160L360-470l358-358q11-11 27.5-11.5T774-828l54 54q12 12 12 28t-12 28L470-360Zm-190 80Z"/></svg> View My Work</button>
-        <button class="secondary">Get In Touch</button>
+        <button class="primary"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -1100 960 960" width="24px" fill="#e3e3e3"><path d="M200-200h57l391-391-57-57-391 391v57Zm-80 80v-170l528-527q12-11 26.5-17t30.5-6q16 0 31 6t26 18l55 56q12 11 17.5 26t5.5 30q0 16-5.5 30.5T817-647L290-120H120Zm640-584-56-56 56 56Zm-141 85-28-29 57 57-29-28Z"/></svg> View My Work</button>
+        <button class="secondary" onclick="getContact()">Get In Touch</button>
       </div>
   </header>
 
@@ -42,32 +50,38 @@
       Each piece is a unique blend of creativity and craftsmanship, <br> painted with digital brushes and boundless imagination.
     </p>
     <div class="gallery-grid">
-      <div class="gallery-card orange">
+      <div class="gallery-card">
+        <div class="gallery-card orange"></div>
         <h3>Digital Dreamscape</h3>
         <span class="tag">Web Design</span>
         <p>An immersive web experiment exploring the boundaries of digital art.</p>
       </div>
-      <div class="gallery-card green">
+      <div class="gallery-card">
+        <div class="gallery-card green"></div>
         <h3>Organic Interface</h3>
         <span class="tag">UI/UX</span>
         <p>Mobile app design inspired by natural forms and textures.</p>
       </div>
-      <div class="gallery-card blue">
+      <div class="gallery-card">
+        <div class="gallery-card blue"></div>
         <h3>Brush & Bytes</h3>
         <span class="tag">Branding</span>
         <p>Brand identity merging traditional art with modern technology.</p>
       </div>
-      <div class="gallery-card pink">
+      <div class="gallery-card">
+        <div class="gallery-card pink"></div>
         <h3>Canvas Chronicles</h3>
         <span class="tag">Illustration</span>
         <p>Interactive storytelling platform with hand-drawn illustrations.</p>
       </div>
-      <div class="gallery-card yellow">
+      <div class="gallery-card">
+        <div class="gallery-card yellow"></div>
         <h3>Textured Typography</h3>
         <span class="tag">Typography</span>
         <p>Custom font design with painterly characteristics.</p>
       </div>
-      <div class="gallery-card purple">
+      <div class="gallery-card">
+        <div class="gallery-card purple"></div>
         <h3>Virtual Gallery</h3>
         <span class="tag">3D Design</span>
         <p>3D art exhibition space with realistic lighting.</p>
@@ -96,7 +110,9 @@
       </div>
     </div>
     <div class="artist-skills">
-      <div class="icon"></div>
+      <div class="icon-container">
+        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" height="80px" viewBox="0 -960 960 960" width="80px" fill="#e3e3e3"><path d="M240-120q-45 0-89-22t-71-58q26 0 53-20.5t27-59.5q0-50 35-85t85-35q50 0 85 35t35 85q0 66-47 113t-113 47Zm0-80q33 0 56.5-23.5T320-280q0-17-11.5-28.5T280-320q-17 0-28.5 11.5T240-280q0 23-5.5 42T220-202q5 2 10 2h10Zm230-160L360-470l358-358q11-11 27.5-11.5T774-828l54 54q12 12 12 28t-12 28L470-360Zm-190 80Z"/></svg></div>
+      </div>
       <h3>Creative Skills</h3>
       <div class="skill-bar"><span>Digital Painting</span><div class="bar" style="width: 95%"></div></div>
       <div class="skill-bar"><span>Web Design</span><div class="bar" style="width: 90%"></div></div>
@@ -120,7 +136,6 @@
           <option>Web Design</option>
           <option>Illustration</option>
           <option>Branding</option>
-          <option>3D Design</option>
         </select>
         <textarea placeholder="Tell me about your vision"></textarea>
         <button type="submit" class="primary">Start Our Collaboration</button>
@@ -146,10 +161,11 @@
       <p>Follow my creative journey on social media</p>
       <div class="socials">
         <a href="#">Instagram</a>
-        <a href="#">Dribbble</a>
-        <a href="#">Behance</a>
+        <a href="#">Pinterest</a>
+        <a href="#">Whatsapp</a>
       </div>
     </footer>
   </section>
+  <script src="app.js"></script>
 </body>
 </html>

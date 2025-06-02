@@ -4,6 +4,7 @@
 :root {
   --primary: #d26a1c;
   --accent: #f7b267;
+  --highlight: #9fc87e83;
   --bg: #f9f7f3;
   --text: #292929;
   --muted: #424141;
@@ -15,6 +16,59 @@ h2{
   margin: 0;
 }
 
+.background-circles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.background-circles .circle {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.4;
+  mix-blend-mode: lighten;
+}
+
+.background-circles .circle1 {
+  width: 400px;
+  height: 400px;
+  left: -100px;
+  top: -100px;
+  background: radial-gradient(circle at 30% 30%, #d26a1c 0%, #f7b267 100%);
+}
+
+.background-circles .circle2 {
+  width: 300px;
+  height: 300px;
+  right: -80px;
+  top: 120px;
+  background: radial-gradient(circle at 70% 30%, #4f8cff 0%, #a18cd1 100%);
+}
+
+.background-circles .circle3 {
+  width: 350px;
+  height: 350px;
+  left: 50%;
+  bottom: -120px;
+  transform: translateX(-50%);
+  background: radial-gradient(circle at 50% 70%, #e96443 0%, #ffd200 100%);
+}
+
+.background-circles .circle4 {
+  width: 100px;
+  height: 100px;
+  left: -30%;
+  bottom: -120px;
+  transform: translateX(-50%);
+  background: radial-gradient(circle at 50% 70%, #3c00ff 0%, #fd00dc 100%);
+}
+
 body {
   background: var(--bg);
   color: var(--text);
@@ -22,11 +76,15 @@ body {
   margin: 0;
   padding: 0;
   padding-top: 5.5rem;
+  position: relative;
+  z-index: 1;
 }
 
 header {
     text-align: center;
     padding: 1em;
+    position: relative;
+    z-index: 10;
 }
 
 .logo{
@@ -61,20 +119,27 @@ header {
 
 nav ul{
   display: flex;
+  gap: 10px;
 }
 
 nav li {
   list-style: none;
-  padding: 0.1rem 1.0rem;
-  border-radius: 1.2rem;
+  padding: 0.2rem 1.0rem;
+  border-radius: 1.3rem;
   cursor: pointer;
   font-weight: 400;
   
 }
 
 nav li:hover {
+  background: var(--highlight);
+  transition: background 0.2s, color 0.2s;
+}
+
+nav li.active {
   background: var(--primary);
   color: #fff;
+  transition: background 0.2s, color 0.2s;
 }
 
 .tagline{
@@ -83,6 +148,7 @@ nav li:hover {
   flex-direction: column;
   padding: 0px;
   margin-top: 20px;
+  line-height: 1.3;
 }
 
 .studio{
@@ -117,7 +183,7 @@ button.primary, .primary {
 }
 
 button.secondary {
-  background: #fff;
+  background: none;
   color: var(--muted);
   border: 2px solid var(--muted);
   padding: 0.8rem 2rem;
@@ -158,6 +224,7 @@ button.secondary:hover {
   margin-bottom: 1.5rem;
 }
 
+
 .gallery-card {
   background: #fff;
   border-radius: var(--card-radius);
@@ -179,23 +246,22 @@ button.secondary:hover {
 .gallery-card.purple { background: linear-gradient(135deg, #43cea2 60%, #185a9d 100%); color: #fff; }
 
 .gallery-card h3 {
-  margin: 0 0 0.2rem 0;
+  margin: 0.2rem;
   font-family: 'Kalam', cursive;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 }
 
 .gallery-card .tag {
   background: rgba(255,255,255,0.2);
-  border-radius: 1rem;
-  padding: 0.2rem 0.8rem;
-  font-size: 0.8rem;
+  padding: 0.2rem;
+  font-size: 1.1rem;
   margin-bottom: 0.5rem;
   display: inline-block;
 }
 
 .gallery-card p {
-  font-size: 0.95rem;
-  margin: 0.2rem 0 0 0;
+  font-size: 1.0rem;
+  margin: 0.2rem;
   font-family: 'Indie Flower', cursive;
 }
 
@@ -264,7 +330,7 @@ button.secondary:hover {
   justify-content: flex-start;
 }
 
-.artist-skills .icon {
+.artist-skills .icon-container {
   width: 250px;
   height: 250px;
   background: linear-gradient(135deg, #d26a1c 60%, #f7b267 100%);
@@ -416,6 +482,9 @@ footer {
   background: var(--primary);
   color: #fff;
 }
+
+
+
 
 @media (max-width: 900px) {
   .artist-section, .create-grid {
