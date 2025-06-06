@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const navLinks = document.querySelectorAll('.nav-bar ul li');
   const sectionMap = {
     'Canvas': '.hero-content',
-    'Gallery': '.gallery-section',
+    'Skills': '.skills-section',
     'Artist': '.artist-section',
     'Commission': '.create-section'
   };
@@ -65,9 +65,9 @@ document.addEventListener('DOMContentLoaded', function() {
     if (viewWorkBtn) {
         viewWorkBtn.addEventListener('click', function(f) {
         f.preventDefault();
-        const gallerySection = document.querySelector('.gallery-section');
-        if (gallerySection) {
-            gallerySection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        const skillsSection = document.querySelector('.skills-section');
+        if (skillsSection) {
+            skillsSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
         });
     }

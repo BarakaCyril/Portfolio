@@ -48,7 +48,7 @@ h2{
   height: 300px;
   right: -80px;
   top: 120px;
-  background: radial-gradient(circle at 70% 30%, #4f8cff 0%, #a18cd1 100%);
+  background: radial-gradient(circle at 70% 30%, #4f8cff 0%, #ff0000 100%);
 }
 
 .background-circles .circle3 {
@@ -57,16 +57,16 @@ h2{
   left: 50%;
   bottom: -120px;
   transform: translateX(-50%);
-  background: radial-gradient(circle at 50% 70%, #e96443 0%, #ffd200 100%);
+  background: radial-gradient(circle at 50% 70%, #4f8cff 0%, #a18cd1 100%);
 }
 
 .background-circles .circle4 {
   width: 100px;
   height: 100px;
   left: -30%;
-  bottom: -120px;
+  bottom: -120px; 
   transform: translateX(-50%);
-  background: radial-gradient(circle at 50% 70%, #3c00ff 0%, #fd00dc 100%);
+  background: radial-gradient(circle at 50% 70%, #aaff00 0%, #fd0000 100%);
 }
 
 body {
@@ -200,12 +200,12 @@ button.secondary:hover {
   color: #fff;
 }
 
-.gallery-section {
+.skills-section {
   padding: 2rem 1rem;
   text-align: center;
 }
 
-.gallery-section h2 {
+.skills-section h2 {
   font-family: 'Kalam', cursive;
   font-size: 2.5rem;
   margin-bottom: 0.2rem;
@@ -218,56 +218,80 @@ button.secondary:hover {
   margin-bottom: 2rem;
 }
 
-.gallery-grid {
+.skills-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(260px, 1fr));
   gap: 1.5rem;
   margin-bottom: 1.5rem;
 }
 
-
-.gallery-card {
+.skills-card {
   background: #fff;
   border-radius: var(--card-radius);
   box-shadow: var(--shadow);
-  padding: 1.2rem 1rem 1rem 1rem;
+  padding: 3rem 1.5rem;
   text-align: left;
   position: relative;
-  min-height: 260px;
+  min-height: fit-content;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   transition: transform 0.25s cubic-bezier(0.4, 0.2, 0.2, 1), box-shadow 0.25s;
 }
 
-.gallery-card:hover {
+.skills-icon{
+  background: var(--accent);
+  width: fit-content;
+  padding: 8px;
+  margin-bottom: 20px;
+  border-radius: var(--card-radius);
+  align-items: center;
+  justify-content: center;
+}
+
+.skills-icon.orange {
+  background: linear-gradient(135deg, #ffb547 0%, #ff7433 100%);
+}
+.skills-icon.blue {
+  background: linear-gradient(135deg, #4f8cff 0%, #a18cd1 100%);
+}
+.skills-icon.green {
+  background: linear-gradient(135deg, #43cea2 0%, #185a9d 100%);
+}
+.skills-icon.purple {
+  background: linear-gradient(135deg, #a18cd1 0%, #f7971e 100%);
+}
+.skills-icon.yellow {
+  background: linear-gradient(135deg, #f7b267 0%, #ffd200 100%);
+}
+.skills-icon.pink{
+  background: linear-gradient(135deg, #f767d8 0%, #ff00eea4 100%);
+}
+.skills-line{
+  width: 290px;
+  height: 1px;
+  border-radius: 20px;
+  background-color: #65656539;
+  margin: 1.5rem 0rem;
+}
+
+.skills-card:hover {
   transform: scale(1.025);
-  box-shadow: 0 8px 32px rgba(210, 106, 28, 0.18), var(--shadow);
+  box-shadow: 0 8px 32px rgba(239, 114, 18, 0.18), var(--shadow);
   z-index: 2;
 }
 
-.gallery-card.orange { background: linear-gradient(135deg, #d26a1c 60%, #f7b267 100%); color: #fff; }
-.gallery-card.green { background: linear-gradient(135deg, #4caf50 60%, #a8e063 100%); color: #fff; }
-.gallery-card.blue { background: linear-gradient(135deg, #4f8cff 60%, #a18cd1 100%); color: #fff; }
-.gallery-card.pink { background: linear-gradient(135deg, #e96443 60%, #904e95 100%); color: #fff; }
-.gallery-card.yellow { background: linear-gradient(135deg, #f7971e 60%, #ffd200 100%); color: #fff; }
-.gallery-card.purple { background: linear-gradient(135deg, #43cea2 60%, #185a9d 100%); color: #fff; }
+.explore-skill{
+  color: var(--accent);
+}
 
-.gallery-card h3 {
+.skills-card h3 {
   margin: 0.2rem;
   font-family: 'Kalam', cursive;
   font-size: 1.4rem;
 }
 
-.gallery-card .tag {
-  background: rgba(255,255,255,0.2);
-  padding: 0.2rem;
-  font-size: 1.1rem;
-  margin-bottom: 0.5rem;
-  display: inline-block;
-}
-
-.gallery-card p {
+.skills-card p {
   font-size: 1.0rem;
   margin: 0.2rem;
   font-family: 'Indie Flower', cursive;
@@ -407,10 +431,11 @@ button.secondary:hover {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  border: 1.5px solid #c4c4c490;
 }
 
 .collab-form input, .collab-form select, .collab-form textarea {
-  border: 1px solid #eee;
+  border: 1.5px solid #acacac4b;
   border-radius: 0.7rem;
   padding: 0.7rem;
   font-size: 1rem;
@@ -441,13 +466,24 @@ button.secondary:hover {
   padding: 0.5em 0em;
 }
 
-.paint-together, .availability {
-  background: #fff;
+.paint-together{
+  background: #9fc87e54;
   border-radius: var(--card-radius);
   box-shadow: var(--shadow);
   padding: 1.0rem 1rem;
   text-align: left;
+  border: 1.5px solid #9fc87eb7;
 }
+
+.availability {
+  background: #f7b16749;
+  border-radius: var(--card-radius);
+  box-shadow: var(--shadow);
+  padding: 1.0rem 1rem;
+  text-align: left;
+  border: 1.5px solid #f7b1679a;
+}
+
 
 .paint-together h4, .availability h4 {
   margin: 0 0 0.5rem 0;
@@ -502,13 +538,18 @@ footer {
     flex-direction: column;
     align-items: stretch;
   }
-
-  .gallery-grid{
+  .nav-bar{
+    padding: 0px 10px;
+  }
+  .skills-grid{
     grid-template-columns: repeat(2, minmax(260px, 1fr));
   }
 }
 
 @media (max-width:600px) {
+  logo h2{
+    content: "My Portfolio";
+  }
   .nav-bar{
     padding: 0.7em 1.7em;
   }
@@ -526,7 +567,7 @@ footer {
     align-items: center;
     justify-content: center;
   }
-  .gallery-grid {
+  .skills-grid {
     display: grid;
     grid-template-columns: repeat(1, minmax(260px, 1fr));
     gap: 1.5rem;
@@ -535,5 +576,19 @@ footer {
   .artist-section h2{
     text-align: center;
   }
+}
+
+.skills-card .explore-skill {
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition: opacity 0.25s, transform 0.25s;
+}
+
+.skills-card:hover .explore-skill {
+  opacity: 1;
+  cursor: pointer;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
