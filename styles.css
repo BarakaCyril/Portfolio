@@ -208,7 +208,7 @@ button.secondary:hover {
 .skills-section h2 {
   font-family: 'Kalam', cursive;
   font-size: 2.5rem;
-  margin-bottom: 0.2rem;
+  margin: 0.4rem 0rem;
 }
 
 .section-desc {
@@ -249,6 +249,20 @@ button.secondary:hover {
   justify-content: center;
 }
 
+.skills-card .explore-skill {
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition: opacity 0.25s, transform 0.25s;
+}
+
+.skills-card:hover .explore-skill {
+  opacity: 1;
+  cursor: pointer;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
 .skills-icon.orange {
   background: linear-gradient(135deg, #ffb547 0%, #ff7433 100%);
 }
@@ -267,12 +281,13 @@ button.secondary:hover {
 .skills-icon.pink{
   background: linear-gradient(135deg, #f767d8 0%, #ff00eea4 100%);
 }
-.skills-line{
-  width: 290px;
+.skills-line {
+  width: 100%;
   height: 1px;
   border-radius: 20px;
   background-color: #65656539;
   margin: 1.5rem 0rem;
+  display: block;
 }
 
 .skills-card:hover {
@@ -362,15 +377,31 @@ button.secondary:hover {
   justify-content: flex-start;
 }
 
-.artist-skills .icon-container {
+.icon{
+  scale: 2;
+  transition: transform 0.4s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+
+.icon-container {
+  cursor: pointer;
   width: 250px;
   height: 250px;
-  background: linear-gradient(135deg, #d26a1c 60%, #f7b267 100%);
+  background: linear-gradient(135deg, #f7b267 10%, #bd1cd2 100%);
   border-radius: 50%;
   margin-bottom: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: transform 0.4s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+
+
+.icon-container:hover {
+  transform: scale(1.08);
+}
+
+.icon-container:hover .icon {
+  transform: rotate(-18deg) scale(1.5);
 }
 
 .artist-skills h3 {
@@ -528,10 +559,127 @@ footer {
 }
 
 .socials a:hover {
-  background: var(--primary);
-  color: #fff;
+  background: var(--highlight);
+  color: var(--text);
 }
 
+.skill-modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background: rgba(30, 30, 30, 0.45);
+  backdrop-filter: blur(4px);
+  transition: opacity 0.2s;
+}
+.skill-modal.open {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.skill-modal-content {
+  background: #fff;
+  backdrop-filter: blur(5 0px);
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18), var(--shadow);
+  padding: 2.5rem 2rem 2rem 2rem;
+  max-width: 420px;
+  width: 90vw;
+  position: relative;
+  animation: modalIn 0.3s cubic-bezier(0.4,0.2,0.2,1);
+}
+@keyframes modalIn {
+  from { transform: translateY(40px) scale(0.95); opacity: 0; }
+  to { transform: translateY(0) scale(1); opacity: 1; }
+}
+.skill-modal-close {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.5rem;
+  font-size: 2rem;
+  color: var(--muted);
+  cursor: pointer;
+  transition: color 0.2s;
+  z-index: 10;
+}
+.skill-modal-close:hover {
+  color: var(--primary);
+}
+.skill-modal-body h2 {
+  margin-top: 0;
+  font-family: 'Kalam', cursive;
+  font-size: 2.2rem;
+  color: var(--primary);
+}
+.skill-modal-body #modal-skill-icon {
+  margin: 1.2rem 0 1.5rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#modal-skill-icon img{
+  padding: 0.5rem;
+}
+.skill-modal-body #modal-skill-icon img {
+  width: 70px;
+  height: 70px;
+  border-radius: 1rem;
+  box-shadow: var(--shadow);
+}
+.skill-modal-body p {
+  font-family: 'Indie Flower', cursive;
+  font-size: 1.15rem;
+  color: var(--muted);
+  margin-bottom: 1.2rem;
+}
+.skill-modal-body ul {
+  padding-left: 1.2rem;
+  color: var(--text);
+  font-size: 1rem;
+  margin: 0;
+}
+.skill-modal-body ul li {
+  margin-bottom: 0.5rem;
+  list-style: disc;
+}
+
+.collab-confirmation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-radius: var(--card-radius);
+  box-shadow: var(--shadow);
+  padding: 2rem 1.5rem;
+  min-width: 280px;
+  min-height: 200px;
+  margin: 0 auto;
+  font-family: 'Indie Flower', cursive;
+  color: var(--muted);
+  animation: modalIn 0.3s cubic-bezier(0.4,0.2,0.2,1);
+}
+.collab-confirmation .confirmation-message h3 {
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+}
+.collab-confirmation .confirmation-message p {
+  font-size: 1.2rem;
+  margin: 0.5rem 0 0 0;
+}
+.collab-confirmation .confirmation-message.error h3 {
+  color: #d22c1c;
+}
+.collab-confirmation .confirmation-message.error a {
+  color: var(--primary);
+  text-decoration: underline;
+}
 
 @media (max-width: 900px) {
   .artist-section, .create-grid {
@@ -578,17 +726,4 @@ footer {
   }
 }
 
-.skills-card .explore-skill {
-  opacity: 0;
-  transform: translateY(10px);
-  pointer-events: none;
-  transition: opacity 0.25s, transform 0.25s;
-}
-
-.skills-card:hover .explore-skill {
-  opacity: 1;
-  cursor: pointer;
-  transform: translateY(0);
-  pointer-events: auto;
-}
 
