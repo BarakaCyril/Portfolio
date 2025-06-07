@@ -312,25 +312,6 @@ button.secondary:hover {
   font-family: 'Indie Flower', cursive;
 }
 
-.view-all {
-  font-family: 'Indie Flower', cursive ;
-  margin-top: 20px;
-  background: none;
-  color: var(--muted);
-  padding: 0.8rem 2rem;
-  border: none;
-  border-radius: 2rem;
-  font-size: 1.2rem;
-  font-weight: 700;
-  cursor: pointer;
-  transition: background 0.2s, color 0.2s;
-}
-
-.view-all:hover{
-  color: #fff;
-  background-color: var(--muted);
-}
-
 .artist-section {
   display: flex;
   flex-wrap: wrap;
